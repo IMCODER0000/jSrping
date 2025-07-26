@@ -53,5 +53,10 @@ public class DictionaryController {
     }
 
 
+    // 문제에 카테고리 추가 => Entity에서
+
+    // 답을 입력 받고 정답 확인 받기
+
+
 
 }
