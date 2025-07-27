@@ -1,6 +1,6 @@
-package com.example.jobspoon.dictionary.controller.response_form;
+package com.example.jobspoon.term.controller.response_form;
 
-import com.example.jobspoon.dictionary.service.response.ReadDictionaryResponse;
+import com.example.jobspoon.term.service.response.ReadTermResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -10,14 +10,14 @@ import lombok.ToString;
 @ToString
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class ReadDictionaryResponseForm {
+public class ReadTermResponseForm {
 
     private Long termId;
     private String title;
     private String description;
 
-    public static ReadDictionaryResponseForm from(ReadDictionaryResponse response) {
-        return new ReadDictionaryResponseForm(
+    public static ReadTermResponseForm from(ReadTermResponse response) {
+        return new ReadTermResponseForm(
                 response.getTermId(),
                 response.getTitle(),
                 response.getDescription()

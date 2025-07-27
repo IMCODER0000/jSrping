@@ -1,11 +1,11 @@
-package com.example.jobspoon.dictionary.controller.response_form;
+package com.example.jobspoon.term.controller.response_form;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class DictionaryResponseForm {
+public class TermResponseForm {
 
     private Long termId;
     private String title;
