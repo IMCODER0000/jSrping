@@ -35,6 +35,7 @@ public class TermServiceImpl implements TermService {
         // 처음 테스트를 수행하는 경우 카테고리가 등록되어 있지 않아 Null 값 발생
         // aim_db > category 테이블에 다음과 같은 예시 데이터를 입력 후 테스트 진행 필요
         // INSERT INTO category (id, type, group_name, name, depth, sort_order) VALUES ('CAT001', '직무 중심', 'Backend', 'Java', 2, 1);
+        // |---------> mysql에서 데이터 넣는 것 대신 DataInitializer.java 에서 데이터 넣을 수 있도록 해둠
         Category category = categoryRepository.findById(createTermRequest.getCategoryId())
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 카테고리입니다."));
 
