@@ -1,16 +1,14 @@
 package com.example.jobspoon.term.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
 @Getter
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@Table(name = "term")
 public class Term {
 
     @Id
@@ -18,15 +16,20 @@ public class Term {
     private Long id;
 
     @Setter
+    @Column(nullable = false)
     private String title;
 
     @Setter
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String description;
 
-    public Term(String title, String description) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
+
+    public Term(String title, String description, Category category) {
         this.title = title;
         this.description = description;
+        this.category = category;
     }
-
-
 }
